@@ -160,6 +160,9 @@ public class MIPlayerListener implements Listener {
 			}
 			// Save the player's current world
 			MIYamlFiles.savePlayerLogoutWorld(player.getName(), groupTo);
+						
+			ChangeInventoryEvent eventcall = new ChangeInventoryEvent(worldTo,worldFrom,player);
+			Bukkit.getServer().getPluginManager().callEvent(eventcall);
 		}
 	}
 
@@ -213,6 +216,9 @@ public class MIPlayerListener implements Listener {
 					}
 					// Save the player's current world
 					MIYamlFiles.savePlayerLogoutWorld(player.getName(), groupTo);
+								
+					ChangeInventoryEvent eventcall = new ChangeInventoryEvent(worldTo,worldFrom,player);
+					Bukkit.getServer().getPluginManager().callEvent(eventcall);
 
 				}
 			}
